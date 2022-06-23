@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="21dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".Enter_Phone_NO">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+
+        android:text="@string/whatsApp_number"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/select_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+        android:drawableBottom="@drawable/line"
+        android:ems="12"
+        android:gravity="center"
+        android:text="@string/india"
+        android:textColor="#2E7D32" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="11dp"
+            android:drawableStart="@drawable/ic_baseline_plus_one_24"
+            android:drawableBottom="@color/green"
+            android:ems="4"
+            android:inputType="phone"
+            android:text="@string/_91"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/Phone_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@color/green"
+            android:ems="12"
+            android:hint="@string/country_code"
+            android:inputType="phone"
+            tools:ignore="TouchTargetSizeCheck" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/send_otp"
+        android:id="@+id/send_otp"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
