@@ -5,8 +5,6 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ViewPager viewPager;
 
+
+    @SuppressLint({"ResourceType", "UnspecifiedImmutableFlag"})
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("WhatsApp");
         }
-
 
 
         Controller controller = Controller.getDb(this);
@@ -65,19 +64,23 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
 
-        NotificationManager nm= (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Notification notification = null;
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            @SuppressLint({"UseCompatLoadingForDrawables", "ResourceType"}) Notification notification=new Notification.Builder(this,"101")
+           notification = new Notification.Builder(this, "101")
+
                     .setLargeIcon(((BitmapDrawable) Objects.requireNonNull(ResourcesCompat.getDrawable(getResources(), R.drawable.whatsapp, null))).getBitmap())
                     .setSmallIcon(R.id.profile_picture)
-                    .setContentIntent("100",intent)
+                    .setContentIntent(PendingIntent.getActivities(this, 101, new Intent[]{intent}, PendingIntent.FLAG_UPDATE_CURRENT))
                     .setContentTitle("Bhagchand jat")
                     .setSubText("Ram").build();
         }
+        nm.notify(101,notification);
 
     }
 
