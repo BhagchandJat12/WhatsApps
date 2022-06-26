@@ -2,6 +2,7 @@ package com.example.whatsapps;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,15 +27,15 @@ public class SelectCountry extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_country);
         listView = findViewById(R.id.list);
-        toolbar = findViewById(R.id.toolbar);
+      //  toolbar = findViewById(R.id.ti_too);
+
+        Bundle bundle=getIntent().getExtras();
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Choose a country");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        } else {
-            setSupportActionBar(toolbar);
         }
 
         list.add(new countryList(R.drawable.ic_baseline_flag_24, "India", "+91"));
@@ -45,13 +46,13 @@ public class SelectCountry extends AppCompatActivity {
         list.add(new countryList((R.drawable.ic_baseline_flag_24), "Hubli", "+97"));
 
         listView.setLayoutManager(new LinearLayoutManager(this));
-        SelectCountryAdapter listAdapter = new SelectCountryAdapter(SelectCountry.this, list);
+        SelectCountryAdapter listAdapter = new SelectCountryAdapter(this, list,bundle.getString("country"),bundle.getString("con_code"));
         listView.setAdapter(listAdapter);
 
 
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         new MenuInflater(this).inflate(R.menu.search, menu);
         return super.onCreateOptionsMenu(menu);
@@ -71,5 +72,5 @@ public class SelectCountry extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
 }

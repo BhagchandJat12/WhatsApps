@@ -20,8 +20,9 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-
+        android:layout_marginBottom="11dp"
+        android:layout_marginTop="11dp"
+        android:textColor="@color/black"
         android:text="@string/whatsApp_number"/>
 
     <androidx.appcompat.widget.AppCompatTextView

@@ -20,8 +20,9 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-
+        android:layout_marginBottom="11dp"
+        android:layout_marginTop="11dp"
+        android:textColor="@color/black"
         android:text="@string/whatsApp_number"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -36,8 +37,7 @@
         android:ems="12"
         android:gravity="center"
         android:text="@string/india"
-        android:textColor="#2E7D32"
-        tools:ignore="TextContrastCheck" />
+        android:textColor="#2E7D32" />
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -52,12 +52,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
             android:layout_marginEnd="11dp"
+            android:drawableStart="@drawable/ic_baseline_plus_one_24"
             android:drawableBottom="@color/green"
             android:ems="4"
             android:inputType="phone"
-            android:drawableStart="@drawable/ic_baseline_plus_one_24"
             android:text="@string/_91"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/Phone_no"
@@ -65,8 +65,9 @@
             android:layout_height="wrap_content"
             android:drawableBottom="@color/green"
             android:ems="12"
+            android:hint="@string/country_code"
             android:inputType="phone"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.AppCompatButton

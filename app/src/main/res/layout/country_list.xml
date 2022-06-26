@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:id="@+id/row"
+    android:layout_height="?actionBarSize">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:cardUseCompatPadding="true">
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="1"
+        android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/name_country"
+            android:textSize="28sp"
             android:text="@string/india"
             android:layout_weight=".8"
             android:drawableStart="@drawable/ic_baseline_flag_24"
@@ -23,10 +31,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/code"
-            android:layout_weight=".1"
+            android:textSize="28sp"
             android:drawableEnd="@drawable/ic_baseline_check_24"
-            android:text="+91"/>
+            android:layout_weight=".1"
+            android:text="@string/_91"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
