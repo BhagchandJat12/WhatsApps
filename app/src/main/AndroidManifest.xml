@@ -13,17 +13,28 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".Otp"
-            android:theme="@style/Custom_theme"
+            android:name=".Settings"
             android:exported="false" />
+        <activity
+            android:name=".Contact"
+            android:exported="false"
+            android:theme="@style/Custom_theme" />
+        <activity
+            android:name=".Otp"
+            android:exported="false"
+            android:theme="@style/Custom_theme" />
         <activity
             android:name=".SelectCountry"
             android:exported="false"
-            android:theme="@style/Custom_theme" />
+            android:theme="@style/Theme.WhatsApps">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
         <activity
             android:name=".Enter_Phone_NO"
             android:exported="false"
-            android:theme="@style/Custom_theme" />
+            android:theme="@style/Theme.WhatsApps" />
         <activity
             android:name=".Welcome_activity"
             android:exported="false"

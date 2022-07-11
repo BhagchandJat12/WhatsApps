@@ -30,4 +30,21 @@
 
     <string name="_91">91</string>
     <string name="country_code">code</string>
+    <string name="new_contact">New Contact</string>
+    <string name="contacts_on_whatsapp">Contacts on WhatsApp</string>
+    <string name="invite_to_whatsapp">invite to WhatsApp</string>
+    <string name="invite">INVITE</string>
+    <string name="bhagchandjat">Bhagchandjat</string>
+    <string name="scan_code">scan_code</string>
+    <string name="account">Account</string>
+    <string name="privacy_security_change_number">Privacy, Security, change number</string>
+    <string name="chat">Chats</string>
+    <string name="invite_a_friend">Invite a friend</string>
+    <string name="help">Help</string>
+    <string name="storage_and_data">Storage and data</string>
+    <string name="notifications">Notifications</string>
+    <string name="theme">Theme, wallpapers, chat history</string>
+    <string name="message">Message, group &amp; call tones</string>
+    <string name="network">Network usage, auto-download</string>
+    <string name="help_center">Help center, contact us, privacy policy</string>
 </resources>

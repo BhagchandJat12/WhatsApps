@@ -1,6 +1,8 @@
 package com.example.whatsapps;
 
 import android.annotation.SuppressLint;
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -31,11 +33,10 @@ public class SelectCountry extends AppCompatActivity {
 
         Bundle bundle=getIntent().getExtras();
 
-        setSupportActionBar(toolbar);
+       //setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Choose a country");
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+               getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         list.add(new countryList(R.drawable.ic_baseline_flag_24, "India", "+91"));
@@ -50,9 +51,10 @@ public class SelectCountry extends AppCompatActivity {
         listView.setAdapter(listAdapter);
 
 
+
     }
 
-   /* @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         new MenuInflater(this).inflate(R.menu.search, menu);
         return super.onCreateOptionsMenu(menu);
@@ -63,6 +65,8 @@ public class SelectCountry extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.search) {
+            SearchManager searchManager= (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+
             Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -72,5 +76,5 @@ public class SelectCountry extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-*/
+
 }

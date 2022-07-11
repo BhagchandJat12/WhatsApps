@@ -20,8 +20,11 @@ import android.widget.Toast;
 
 import com.example.whatsapps.ChatProfile;
 import com.example.whatsapps.ChatViewAdapter;
+import com.example.whatsapps.Contact;
 import com.example.whatsapps.Enter_Phone_NO;
 import com.example.whatsapps.R;
+import com.example.whatsapps.Settings;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
@@ -40,9 +43,15 @@ public class Chat extends Fragment {
         View view=inflater.inflate(R.layout.fragment_chat, container, false);
         setHasOptionsMenu(true);
        RecyclerView recyclerView=view.findViewById(R.id.chat_view);
+        FloatingActionButton actionButton=view.findViewById(R.id.contact_button);
        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         ArrayList<ChatProfile> list=new ArrayList<>();
 
+        actionButton.setOnClickListener(v->{
+            Intent intent=new Intent(getContext(), Contact.class);
+            startActivity(intent);
+
+        });
 
 
         list.add(new ChatProfile(R.mipmap.ic_launcher, "Bhagchand jat", "I am busy", "7:PM", "9"));
@@ -85,7 +94,8 @@ public class Chat extends Fragment {
         } else if (R.id.payment == id) {
             Toast.makeText(getContext(), "payment", Toast.LENGTH_SHORT).show();
         } else if (R.id.settings == id) {
-            Toast.makeText(getContext(), "Setting", Toast.LENGTH_SHORT).show();
+           Intent intent=new Intent(getContext(), Settings.class);
+           startActivity(intent);
         } else if(R.id.logout==id){
             FirebaseAuth.getInstance().signOut();
             Intent intent=new Intent(getContext(), Enter_Phone_NO.class);

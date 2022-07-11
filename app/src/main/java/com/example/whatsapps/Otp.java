@@ -99,6 +99,7 @@ public class Otp extends AppCompatActivity {
                         editor.putBoolean("flag",true);
                         editor.apply();
                         // Sign in success, update UI with the signed-in user's information
+
                         startActivity(new Intent(Otp.this, MainActivity.class));
                         finish();
 

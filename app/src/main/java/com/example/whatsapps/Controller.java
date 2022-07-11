@@ -7,6 +7,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 @Database(entities = Db.class,exportSchema = false,version = 1)
 public abstract class Controller extends RoomDatabase {
 
@@ -26,8 +28,7 @@ public abstract class Controller extends RoomDatabase {
 
     public  abstract Repository repository();
 
-    public Db findUser(String number){
-        return repository().findDb(number);
 
-    }
+
+
 }
